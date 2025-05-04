@@ -1,29 +1,38 @@
 function updateTime() {
   let johannesburgElement = document.querySelector("#johannesburg");
-  let johannesburgDateElement = johannesburgElement.querySelector(".date");
-  let johannesburgTimeElement = johannesburgElement.querySelector(".time");
-  let johannesburgTime = moment().tz("Africa/Johannesburg");
+  if (johannesburgElement) {
+    let johannesburgDateElement = johannesburgElement.querySelector(".date");
+    let johannesburgTimeElement = johannesburgElement.querySelector(".time");
+    let johannesburgTime = moment().tz("Africa/Johannesburg");
 
-  johannesburgDateElement.innerHTML =
-    johannesburgTime.format(" MMMM D dddd  YYYY");
-  johannesburgTimeElement.innerHTML = johannesburgTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
+    johannesburgDateElement.innerHTML =
+      johannesburgTime.format(" MMMM D dddd  YYYY");
+    johannesburgTimeElement.innerHTML = johannesburgTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
   //Miami
   let miamiElement = document.querySelector("#miami");
-  let miamiDateElement = miamiElement.querySelector(".date");
-  let miamiTimeElement = miamiElement.querySelector(".time");
-  let miamiTime = moment().tz("America/New_York");
+  if (miamiElement) {
+    let miamiDateElement = miamiElement.querySelector(".date");
+    let miamiTimeElement = miamiElement.querySelector(".time");
+    let miamiTime = moment().tz("America/New_York");
 
-  miamiDateElement.innerHTML = miamiTime.format(" MMMM D ddd YYYY");
-  miamiTimeElement.innerHTML = miamiTime.format("h:mm:ss [<small>]A[</small>]");
+    miamiDateElement.innerHTML = miamiTime.format(" MMMM D ddd YYYY");
+    miamiTimeElement.innerHTML = miamiTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 setInterval(updateTime, 1000);
 updateTime();
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
-  let cityName = cityTimeZone.replace("_", "").split("/")[1];
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = ` <div class="city" id="miami">

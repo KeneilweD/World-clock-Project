@@ -1,18 +1,35 @@
 body {
-  background: pink;
+  background: rgb(51, 49, 58);
 }
 .container {
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;
-  background: white;
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(61, 68, 75) 90.2%
+  );
   box-shadow: 5px 5px 5px rgba(73, 72, 72, 0.4);
+}
+#globe {
+  font-size: 38px;
+}
+.globe {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
 }
 h1 {
   text-align: center;
+  font-weight: 700;
   font-family: sans-serif;
+  padding: 10px 10px;
+  box-shadow: 3px 4px 5px rgba(73, 72, 72, 0.4);
 }
 h2 {
+  font-family: sans-serif;
+  font-weight: 600;
   margin: 20px 0 0 0;
 }
 select {
@@ -20,6 +37,11 @@ select {
   width: 100%;
   border-radius: 4px;
   padding: 10px;
+  font-size: 15px;
+  background: rgb(82, 83, 94);
+}
+option {
+  color: white;
 }
 .city {
   display: flex;
@@ -27,15 +49,25 @@ select {
   border-bottom: 1px solid;
   padding: 20px 0;
 }
+
 .time {
   font-size: 33px;
   font-weight: bold;
   margin-top: 25px;
+  font-family: sans-serif;
 }
 .time small {
   font-size: 15px;
 }
+.date {
+  font-family: sans-serif;
+  color: rgb(199, 196, 196);
+}
+a {
+  color: lightskyblue;
+}
 footer {
+  color: white;
   margin-top: 10px;
   padding: 10px;
   text-align: center;

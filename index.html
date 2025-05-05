@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=globe"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
 
@@ -11,6 +15,9 @@
   </head>
   <body>
     <div class="container">
+      <div class="globe">
+        <span class="material-symbols-outlined" id="globe"> globe </span>
+      </div>
       <h1>World Clocks</h1>
 
       <select name="" id="city">
@@ -31,6 +38,13 @@
         <div class="city" id="miami">
           <div>
             <h2>Miami</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"><small></small></div>
+        </div>
+        <div class="city" id="dubai">
+          <div>
+            <h2>Dubai</h2>
             <div class="date"></div>
           </div>
           <div class="time"><small></small></div>

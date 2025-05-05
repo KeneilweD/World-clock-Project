@@ -23,6 +23,20 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  // Dubai
+  //Photo by <a href="https://unsplash.com/@jnate?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nathan John</a> on <a href="https://unsplash.com/photos/skyline-city-panorama-EX-DhiCkjyA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+  let dubaiElement = document.querySelector("#dubai");
+  if (dubaiElement) {
+    let dubaiDateElement = dubaiElement.querySelector(".date");
+    let dubaiTimeElelemt = dubaiElement.querySelector(".time");
+    let dubaiTime = moment().tz("Asia/Dubai");
+
+    dubaiDateElement.innerHTML = dubaiTime.format("dddd, MMMM D, YYYY");
+    dubaiTimeElelemt.innerHTML = dubaiTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 setInterval(updateTime, 1000);
 updateTime();
@@ -43,7 +57,8 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "h:m:ss"
           )}<small>${cityTime.format("A")}</small></div>
-        </div>`;
+        </div> 
+         <a href="/">All cities</a>`;
 }
 
 let citySelect = document.querySelector("#city");
